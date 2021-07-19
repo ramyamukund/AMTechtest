@@ -1,0 +1,42 @@
+﻿@model AMproject.Models.UserPostModel
+@{<div style="float:left">
+    <div style="float:left">
+        <h2>User Details</h2>
+        <table>
+            <tr><td>Name : </td><td>@Model.user.name</td></tr>
+            <tr><td>UserName : </td><td>@Model.user.username</td></tr>
+            <tr><td>Email :</td><td>@Model.user.email</td></tr>
+            <tr><td>Phone :</td><td>@Model.user.phone</td></tr>
+            <tr><td>Website :</td><td>@Model.user.website</td></tr>
+        </table>
+        <h2>Address</h2>
+        <table>
+            <tr><td>Street : </td><td>@Model.user.address.street</td></tr>
+            <tr><td>Suite : </td><td>@Model.user.address.suite</td></tr>
+            <tr><td>City :</td><td>@Model.user.address.city</td></tr>
+            <tr><td>Zip Code :</td><td>@Model.user.address.zipcode</td></tr>
+            <tr><td>Geo :</td><td>Lat : @Model.user.address.geo.lat , Long :@Model.user.address.geo.lng</td></tr>
+        </table>
+        <h2>Company Info</h2>
+        <table>
+            <tr><td>Name : </td><td>@Model.user.company.name</td></tr>
+            <tr><td>Catch Phrase : </td><td>@Model.user.company.catchPhrase</td></tr>
+            <tr><td>BS :</td><td>@Model.user.company.bs</td></tr>
+        </table>
+        <div>
+            <h2>User Posts</h2>
+            <table border="1">
+                @foreach (var post in Model.posts)
+                {
+                    <tr>
+                        <td style="text-align:left">@post.title</td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+    <div style="float:left">
+        <a href="/User/">Back to User List</a>
+    </div>
+</div>
+}

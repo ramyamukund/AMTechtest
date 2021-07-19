@@ -1,0 +1,17 @@
+﻿@model IEnumerable<AMproject.Models.UserPostModel>
+
+@{
+  
+    <h2>Number of Posts By User</h2>
+    <table border="1">
+        <thead><tr><th>User</th><th>UserName</th><th>Number of Posts</th></tr></thead>
+        @foreach (var userPost in Model)
+        {
+    <tr>
+        <td style="text-align:center"><a href="/User/Details/@userPost.userId">@userPost.name</a></td>
+        <td style="text-align:center">@userPost.userName</td>
+        <td style="text-align:center">@userPost.numberOfPosts</td>
+    </tr>
+        }
+    </table>
+ }
